@@ -9,6 +9,10 @@ import 'apistate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_practice/netwrok/apiresponse.dart';
 
+/*  handling Api using bloc and changes diffrent states by different events.
+    some events also has state so it get the value from ui and take it to the bloc
+    state is changed accordingly*/
+
 class ApiBloc extends Bloc<ApiEvent, GetAPIState> {
   ApiResponse apiresponse = ApiResponse();
 

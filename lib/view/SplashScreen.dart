@@ -31,6 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Styles.container(
           height: MediaQuery.of(context).size.height * 0.5,
           width: MediaQuery.of(context).size.width*0.9,
+          /*Lottie animation is used. don't forget to give
+            the proper path in pubspec.yaml 
+            - assets/splash.json*/
           child: Lottie.asset('assets/splash.json')
         )));
   }

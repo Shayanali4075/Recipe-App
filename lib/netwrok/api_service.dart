@@ -5,6 +5,9 @@ import 'package:bloc_practice/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
+/*An API Service class which has multiple apis for different return type*/
+
+
 class ApiService {
   Dio dio = Dio();
 
@@ -46,7 +49,6 @@ class ApiService {
             "ingredients": query,
           });
       if (res.statusCode == 200) {
-        // Assuming RecipeModel.fromJson is designed to handle a Map<String, dynamic>
         List<dynamic> body = res.data;
         List<findByIngredients> recipes =
             body.map((data) => findByIngredients.fromJson(data)).toList();
@@ -72,7 +74,6 @@ class ApiService {
             "apiKey": apiKey,
           });
       if (res.statusCode == 200) {
-        // Assuming RecipeModel.fromJson is designed to handle a Map<String, dynamic>
         List body = res.data;
         List<GetRecipeModel> recipes =
             body.map((data) => GetRecipeModel.fromJson(data)).toList();

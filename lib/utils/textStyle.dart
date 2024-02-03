@@ -3,7 +3,8 @@
 import 'package:bloc_practice/utils/appColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
+/* MyText class which can contain diffrent type of text styling.
+    also provide some ease.*/
 class MyText {
   static heading(
       {required String text,
@@ -14,6 +15,8 @@ class MyText {
       textAlign: textAlign,
       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: color),
     )
+     /*.animate is GSkinner made animation which makes the animation alot eaiser 
+     package name: flutter_animate*/ 
         .animate(delay: 1.3.seconds)
         .then(duration: 500.ms)
         .fadeIn(begin: 0, duration: 300.ms)

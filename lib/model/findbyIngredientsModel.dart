@@ -33,6 +33,9 @@ class findByIngredients {
     missedIngredientCount = json['missedIngredientCount'];
     title = json['title'];
     usedIngredientCount = json['usedIngredientCount'];
+    /*  getting the list comming from api.
+        as json['missedIngredients'] is List of map<String,dynamic>.
+        so Ingredients model class is created for this which contains the same variables as Map keys from Api.*/
     if (json['missedIngredients'] != null) {
       missedIngredients = <Ingredient>[];
       json['missedIngredients'].forEach((v) {
@@ -87,6 +90,8 @@ class Ingredient {
         amount= json['amount'].toDouble();
         id= json['id'];
         image= json['image'];
+        /* json[meta] returns List of string so no need to create a model class for it as
+            it is List Type. model class could be created if the Type is map<String,dynamic>*/
         if(json['meta'] != null){
           meta = <String>[];
           json['meta'].forEach((v){

@@ -49,5 +49,5 @@ class FindRecipeEvent extends ApiEvent{
   @override
   List<Object> get props => [data];
 }
-
+// this event doesn't have any value it is made for clearing the findrecipestate by giving empty list []
 class ClearEvent extends ApiEvent{}

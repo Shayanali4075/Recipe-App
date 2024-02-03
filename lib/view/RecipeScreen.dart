@@ -69,6 +69,8 @@ class RecipeScreen extends StatelessWidget {
                                   text:
                                       'Equipments: ${step[index].equipment![j].name}:',
                                   color: blackColor),
+                            /*indexing all the values in ingredient using for loop
+                              */ 
                             for (int i = 0;
                                 i < step[index].ingredients!.length;
                                 i++)

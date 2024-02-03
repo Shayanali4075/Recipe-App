@@ -5,6 +5,11 @@ import 'package:bloc_practice/bloc/apievent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/*  A Custom class which is a functionality of searchbar in home screen.
+    a boolean variable is used in this class which could be a good option do work
+     instead of making different different screen and different search bar this way we can do it on
+     single page*/
+
 bool find = false;
 
 class MySearchBar extends StatefulWidget {

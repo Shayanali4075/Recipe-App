@@ -1,5 +1,10 @@
 // ignore_for_file: file_names
 
+/*  a model class can be created easily by just copy the api response.
+    go to any website that converts json to dart paste the response.
+    the model class will be created but sometime there will be issues in generated code while handling the
+    complex API. */
+
 class GetRecipeModel {
   String? name;
   List<Steps>? steps;

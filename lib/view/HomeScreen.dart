@@ -21,6 +21,9 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: backgroundColor,
       body: CustomScrollView(
         slivers: [
+          /*Custom Sroll View is used for animated screen like you can see the card in recipeDetail screen
+            in app the app bar goes up as it scroll down. all because of the customscrollview widget.
+            it has silvers. before using this make sure you read silvers first.*/
           const SliverAppBar(
               backgroundColor: backgroundColor,
               expandedHeight: 80.0,
@@ -30,6 +33,7 @@ class MyHomePage extends StatelessWidget {
               flexibleSpace: Center(
                 child: MySearchBar(),
               )),
+              // used nested bloc builder so handling multiple bloc on single screen
           BlocBuilder<FindByIngredientsBloc, FindRecipeState>(
             builder: (context, state) {
               if (state.data.isNotEmpty) {
