@@ -4,6 +4,7 @@ import 'package:bloc_practice/utils/appColors.dart';
 import 'package:bloc_practice/view/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +41,14 @@ class MyApp extends StatelessWidget {
             //
             // This works for code too, not just values: Most code changes can be
             // tested with just a hot reload.
+            textTheme: TextTheme(
+          titleLarge: GoogleFonts.oswald(
+            fontSize: 30,
+            fontStyle: FontStyle.normal,
+          ),
+          bodyMedium: GoogleFonts.merriweather(color: Colors.white),
+          displaySmall: GoogleFonts.pacifico(color: Colors.white),
+        ),
             colorScheme: ColorScheme.fromSeed(seedColor: secondaryColor),
             useMaterial3: true,
           ),
