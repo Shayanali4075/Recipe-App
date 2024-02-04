@@ -23,12 +23,24 @@ class MyText {
         .moveY(begin: -50);
   }
 
-  static body({required String text, Color? color = secondaryColor}) {
+  static body({required String text, Color? color = secondaryColor, FontWeight? fontWeight = FontWeight.normal}) {
     return Text(
       text,
       style:
-          TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: color),
+          TextStyle(fontSize: 14, fontWeight: fontWeight, color: color),
     ).animate(delay: 1.3.seconds)
+        .then(duration: 500.ms)
+        .fadeIn(begin: 0, duration: 300.ms)
+        .moveY(begin: -50);
+  }
+
+  static step({required String heading, required String text}){
+    return RichText(text: TextSpan(children: [
+      TextSpan(text: heading,style:
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: blackColor),),
+      TextSpan(text: text,style: const
+          TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: blackColor),),
+    ])).animate(delay: 1.3.seconds)
         .then(duration: 500.ms)
         .fadeIn(begin: 0, duration: 300.ms)
         .moveY(begin: -50);

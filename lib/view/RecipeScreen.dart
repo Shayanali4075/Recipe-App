@@ -40,7 +40,7 @@ class RecipeScreen extends StatelessWidget {
                           children: [
                             Styles.plate(
                                 imageUrl: imageUrl, height: 300, width: 300),
-                          MyText.heading(text: title)
+                            MyText.heading(text: title)
                           ],
                         ),
                         width: 300,
@@ -65,22 +65,30 @@ class RecipeScreen extends StatelessWidget {
                             for (int j = 0;
                                 j < step[index].equipment!.length;
                                 j++)
-                              MyText.body(
-                                  text:
-                                      'Equipments: ${step[index].equipment![j].name}:',
-                                  color: blackColor),
+                              j == 0
+                                  ? MyText.step(
+                                      text: '\t${step[index].equipment![j].name}',
+                                      heading: 'Equipment:\n')
+                                  : MyText.step(
+                                      text: '\t${step[index].equipment![j].name}',
+                                      heading: ''),
                             /*indexing all the values in ingredient using for loop
-                              */ 
+                              */
                             for (int i = 0;
                                 i < step[index].ingredients!.length;
                                 i++)
-                              MyText.body(
-                                  text:
-                                      'Ingredients: ${step[index].ingredients![i].name}',
-                                  color: blackColor),
-                            MyText.body(
-                                text: 'Now: ${step[index].step}',
-                                color: blackColor),
+                              i == 0
+                                  ? MyText.step(
+                                      text:
+                                          '\t${step[index].ingredients![i].name}',
+                                      heading: 'Ingredients:\n')
+                                  : MyText.step(
+                                      text:
+                                          '\t${step[index].ingredients![i].name}',
+                                      heading: ''),
+                            MyText.step(
+                                text: '${step[index].step}',
+                                heading: 'Now: '),
                           ],
                         );
                       },
